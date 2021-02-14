@@ -1,0 +1,29 @@
+<ion-content>
+  <ion-list
+    style="margin: 0; position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title style="font-size: 30px;">buy</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+
+    <ion-item>
+
+      <ion-thumbnail slot="start">
+        <!-- <img src="{{ this.image }}" alt=""> -->
+      </ion-thumbnail>
+      
+      <ion-item-sliding>
+        <ion-item >
+          <ion-title>Cream : {{ cream }}</ion-title>
+        </ion-item>
+      
+      </ion-item-sliding>   
+
+      
+    </ion-item>
+    
+    <ion-button expand="block" (click)="sendData('BACK')"> BACK </ion-button>
+  </ion-list>
+</ion-content>

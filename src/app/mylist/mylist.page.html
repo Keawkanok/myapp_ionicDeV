@@ -1,0 +1,26 @@
+<ion-content>
+
+  <ion-list>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>ASEAN </ion-title>
+        <ion-title style="text-align: end; font-size: 11px;">(สามารถคลิกเพื่อดูรายเอียดแต่ละประเทศได้)</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    
+    <ion-item *ngFor="let aec of this.asean" (click)="viewaec(aec)">
+
+      <ion-thumbnail slot="start" >
+        <img src="{{aec.national_flag}}" >
+      </ion-thumbnail>
+
+      <ion-item-sliding>
+        <ion-item>
+          <ion-label>ประเทศ : {{aec.country}}</ion-label>
+        </ion-item>
+      </ion-item-sliding>
+
+    </ion-item>
+  </ion-list>
+
+</ion-content>

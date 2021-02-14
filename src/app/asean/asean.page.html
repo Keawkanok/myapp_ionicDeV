@@ -1,0 +1,26 @@
+<ion-content>
+  <ion-list
+    style="margin: 0; position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title style="font-size: 30px;">Country history</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+
+    <ion-item>
+
+      <ion-thumbnail slot="start">
+        <img src="{{ this.national_flag }}" alt="">
+      </ion-thumbnail>
+
+    </ion-item>
+
+    <ion-title>Country : {{ country }}</ion-title>
+    <ion-title>Capital : {{ capital }}</ion-title>
+    <ion-title>Religion : {{ religion }}</ion-title>
+    <ion-title>Population : {{ population }}</ion-title>
+    <ion-title>Language : {{ language }}</ion-title>
+    <ion-button expand="block" (click)="sendData('BACK')"> BACK </ion-button>
+  </ion-list>
+</ion-content>

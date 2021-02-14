@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>BMI</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-item>
+    <ion-label>Fullname</ion-label>
+    <ion-input  Maxlength="4" [(ngModel)]="" placeholder=""></ion-input>
+  </ion-item> -->
+  <ion-item>
+    <ion-label>Weight : (kg)</ion-label>
+    <ion-input type="number" Maxlength="4" [(ngModel)]="weight" placeholder="Weight"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Height : (cm)</ion-label>
+    <ion-input type="number" Maxlength="4" [(ngModel)]="height" placeholder="Height"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" (click)="sendData('OK')">CALCULATE</ion-button>
+  <!-- <ion-button expand="block" color="light" (click)="myFunction('BACK')">RESET</ion-button> -->
+</ion-content>

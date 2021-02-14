@@ -1,0 +1,64 @@
+<ion-content>
+  <ion-card class="card">
+      <ion-toolbar>
+        <ion-title> Loggin Page </ion-title>
+      </ion-toolbar>
+
+    <ion-item>
+      <ion-label></ion-label>
+      <ion-input type="text" Maxlength="8" [(ngModel)]="this.getuser" placeholder="Username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label></ion-label>
+      <ion-input type="password" Maxlength="8" [(ngModel)]="this.getpass" placeholder="Password"></ion-input>
+    </ion-item>
+
+    <ion-list>
+      <ion-item *ngFor="let tmp of this.cblist">
+        <ion-card>
+          <ion-icon name="{{ tmp.iconname }}" style="width: 30px; height: 30px">
+            {{ tmp.iconname }}
+          </ion-icon>
+        </ion-card>
+        <ion-label>{{ tmp.title }}</ion-label>
+        <ion-checkbox [(ngModel)]="tmp.checked" slot="end" value="{{ tmp.value }}" disabled="{{ tmp.dis }}">
+        </ion-checkbox>
+      </ion-item>
+    </ion-list>
+    <!-- <ion-card> -->
+
+      <ion-header [translucent]="true">
+        <ion-toolbar>
+          <ion-title> FOR OF RADIO </ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-list *ngFor="let i of RADIO">
+        <ion-radio-group (ionChange)="radioGroupChange()" [(ngModel)]="radio">
+          <ion-item>
+            <ion-label>{{ i.title }}</ion-label>
+            <ion-radio slot="start" value="{{ i.value }}"></ion-radio>
+          </ion-item>
+
+
+
+        </ion-radio-group>
+      </ion-list>
+      <ion-header [translucent]="true">
+        <ion-toolbar>
+          <ion-title> YOUR SELECTION: MACKEREL </ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-list *ngFor="let i of RADIOS">
+        <ion-radio-group (ionChange)="radioGroupChanges()" [(ngModel)]="radios">
+          <ion-item>
+            <ion-label>{{ i.title }}</ion-label>
+            <ion-radio slot="start" value={{i.value}}></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+
+    <!-- </ion-card> -->
+    <ion-button expand="block" (click)="myFuntion('OK')">OK</ion-button>
+    <ion-button expand="block" color="light" (click)="myFunction('BACK')">BACK</ion-button>
+  </ion-card>
+</ion-content>

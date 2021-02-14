@@ -1,0 +1,29 @@
+<ion-content>
+
+  <ion-list>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Gift for you: ....</ion-title>
+        <!-- <ion-title style="text-align: end; font-size: 11px;">(สามารถคลิกเพื่อดูรายเอียดแต่ละประเทศได้)</ion-title> -->
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-item *ngFor="let list of this.listBuy">
+
+      <ion-thumbnail slot="start">
+        <img src="{{ list.image }}" alt="">
+      </ion-thumbnail>
+
+      <ion-item-sliding>
+        <ion-item >
+          <ion-label>{{list.cream}}</ion-label>
+          <ion-label>Price : {{list.price}}</ion-label>
+          <ion-checkbox slot="end" value=""  [(ngModel)]="list.checked"></ion-checkbox>
+        </ion-item>
+      
+      </ion-item-sliding>   
+
+    </ion-item>
+    <ion-button expand="block" (click)="buy(list)">BUY</ion-button>
+  </ion-list>
+</ion-content>
