@@ -9,10 +9,7 @@ import { Component, OnInit } from "@angular/core";
 export class ListbuyPage implements OnInit {
   listBuy: any;
   Buy: any;
-  lists: String;
-  All = "";
   constructor(public router: Router) {}
-
   ngOnInit() {
     this.listBuy = [
       {
@@ -66,42 +63,52 @@ export class ListbuyPage implements OnInit {
       if (this.listBuy[i].checked) {
         if (i === 0) {
           lists.push({
+            image: "https://img.icons8.com/color/48/000000/face-powder.png",
+            cream: "Face Powder",
+            price: 145.5,
+          });
+        }
+        if (i === 1) {
+          lists.push({
+            image: "https://img.icons8.com/color/48/000000/lipstick.png",
+            cream: "Lipstick",
+            price: 125.5,
+          });
+        }
+        if (i === 2) {
+          lists.push({
+            image:
+              "https://img.icons8.com/color/d48/000000/foundation-makeup.png",
+            cream: "Foundation Makeup",
+            price: 245.5,
+          });
+        }
+        if (i === 3) {
+          lists.push({
+            image: "https://img.icons8.com/color/48/000000/perfume-bottle.png",
+            cream: "Perfume",
+            price: 405.2,
+          });
+        }
+        if (i === 4) {
+          lists.push({
+            image: "https://img.icons8.com/color/48/000000/cream-tube.png",
+            cream: "Cream Tube",
+            price: 115.2,
+          });
+        }
+        if (i === 5) {
+          lists.push({
+            image: "https://img.icons8.com/color/48/000000/cosmetic-brush.png",
             cream: "Cosmetic Brush",
             price: 200.5,
           });
-          
-        }
-        if (i === 1) {
-          lists.push("Lipstick ");
-          lists.push("125.5 ");
-
-        }
-        if (i === 2) {
-          lists.push("Foundation Makeup ");
-          lists.push(" 245.5 ");
-
-        }
-        if (i === 3) {
-          lists.push("Perfume ");
-          lists.push(" 405.2 ");
-
-        }
-        if (i === 4) {
-          lists.push("Cream Tube ");
-          lists.push(" 115.2 ");
-
-        }
-        if (i === 5) {
-          lists.push("Cosmetic Brush ");
-          lists.push(" 200.5 ");
         }
       }
-      this.All = lists.toString();
       // console.log(this.All);
       // console.log(this.listBuy[i].cream + " : " + this.listBuy[i].checked);
-      let Buy = JSON.stringify(this.All);
+      let Buy = JSON.stringify(lists);
       this.router.navigate(["buy", Buy]);
-
     }
   }
 }

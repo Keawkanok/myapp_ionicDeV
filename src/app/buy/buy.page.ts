@@ -1,35 +1,37 @@
-import { ActivatedRoute } from '@angular/router';
-import { NavController } from '@ionic/angular';
-import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
+import { NavController } from "@ionic/angular";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-buy',
-  templateUrl: './buy.page.html',
-  styleUrls: ['./buy.page.scss'],
+  selector: "app-buy",
+  templateUrl: "./buy.page.html",
+  styleUrls: ["./buy.page.scss"],
 })
 export class BuyPage implements OnInit {
-
   image: ImageData;
-  cream: String;
-  title: String;
   price: Number;
-  constructor(public navCtrl: NavController, public actroute: ActivatedRoute) { }
+  data: any = [];
+  total: any = [];
+  sum: number;
+  constructor(public navCtrl: NavController, public actroute: ActivatedRoute) {}
 
   ngOnInit() {
-    const dataDev = this.actroute.snapshot.paramMap.get('sendBuy');
+    const dataDev = this.actroute.snapshot.paramMap.get("sendBuy");
     let getBuy = JSON.parse(dataDev);
-    console.log(getBuy , "out");
-    this.cream = getBuy[1];
-    console.log(this.cream);
-
-    // this.cream = getBuy;
-    // for(let i=0; i < this.cream.length; i++){
-    //   console.log(getBuy['cream']);
-    // }
+    console.log(getBuy, "out");
+    for (let i = 0; i < getBuy.length; i++) {
+      this.total.push(getBuy[i]["price"]);
+      this.data.push({
+        cream: getBuy[i]["cream"],
+        price: getBuy[i]["price"],
+        image: getBuy[i]["image"],
+      });
+    }
+    this.sum = this.total.reduce((partial_sum, a) => partial_sum + a, 0);
+    console.log("price", this.sum);
   }
 
-
-  sendData(){
+  sendData() {
     this.navCtrl.pop();
   }
 }

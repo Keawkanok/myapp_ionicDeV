@@ -3,27 +3,32 @@
     style="margin: 0; position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">
     <ion-header>
       <ion-toolbar>
-        <ion-title style="font-size: 30px;">buy</ion-title>
+        <ion-title style="font-size: 30px;">Purchase list</ion-title>
       </ion-toolbar>
     </ion-header>
 
 
-    <ion-item>
+    <ion-item *ngFor="let i of this.data">
 
       <ion-thumbnail slot="start">
-        <!-- <img src="{{ this.image }}" alt=""> -->
+        <img src="{{ i.image }}" alt="">
       </ion-thumbnail>
-      
-      <ion-item-sliding>
-        <ion-item >
-          <ion-title>Cream : {{ cream }}</ion-title>
-        </ion-item>
-      
-      </ion-item-sliding>   
 
-      
+      <ion-item-sliding>
+        <ion-item>
+          <ion-title>Cream : {{ i.cream }}</ion-title>
+        </ion-item>
+
+        <ion-item>
+          <ion-title>Price : {{ i.price }}</ion-title>
+        </ion-item>
+      </ion-item-sliding>
+
     </ion-item>
-    
+      <ion-item>
+        <ion-title>Total price : {{ sum | number:'1.1-2'}}</ion-title>
+      </ion-item>
+
     <ion-button expand="block" (click)="sendData('BACK')"> BACK </ion-button>
   </ion-list>
 </ion-content>
