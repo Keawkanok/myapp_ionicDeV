@@ -22,7 +22,7 @@ export class BuyPage implements OnInit {
     for (let i = 0; i < getBuy.length; i++) {
       this.total.push(getBuy[i]["price"]);
       this.data.push({
-        cream: getBuy[i]["cream"],
+        title: getBuy[i]["title"],
         price: getBuy[i]["price"],
         image: getBuy[i]["image"],
       });

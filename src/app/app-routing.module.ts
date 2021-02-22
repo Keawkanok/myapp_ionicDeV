@@ -9,7 +9,7 @@ const routes: Routes = [
   {
     path: '',
     // redirectTo: 'home',
-    redirectTo: 'listbuy',
+    redirectTo: 'firebase',
     pathMatch: 'full'
   },
   {
@@ -39,6 +39,14 @@ const routes: Routes = [
   {
     path: 'listbuy',
     loadChildren: () => import('./listbuy/listbuy.module').then( m => m.ListbuyPageModule)
+  },
+  {
+    path: 'slideopp',
+    loadChildren: () => import('./slideopp/slideopp.module').then( m => m.SlideoppPageModule)
+  },
+  {
+    path: 'firebase',
+    loadChildren: () => import('./learnfirebase/firebase.module').then( m => m.FirebasePageModule)
   },
 ];
 
