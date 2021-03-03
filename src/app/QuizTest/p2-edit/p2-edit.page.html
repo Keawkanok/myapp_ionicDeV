@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>P2_Edit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list >
+    <!-- <ion-input [(ngModel)]="this.title"type="number" Maxlength="4" [(ngModel)]="weight" placeholder="Title"></ion-input> -->
+    <!-- <ion-checkbox slot="end" value="" [(ngModel)]="list.checked"></ion-checkbox> -->
+    <ion-item>
+      <ion-input value=" {{ title }} "> Title: </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input value=" {{ review }} "> Review: </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Genre:</ion-label>
+      <ion-select multiple="true" cancelText="Nah" okText="Okay!">
+        <ion-select-option value="Action ">Action</ion-select-option>
+        <ion-select-option value="Drama">Drama</ion-select-option>
+        <ion-select-option value="Sci-Fi ">Sci-Fi</ion-select-option>
+        <ion-select-option value="CartoonAnimation"> CartoonAnimation</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+  <ion-button color="warning" (click)="update()"> Update </ion-button>
+  <ion-button expand="block" (click)="sendData('BACK')"> BACK </ion-button>
+</ion-content>

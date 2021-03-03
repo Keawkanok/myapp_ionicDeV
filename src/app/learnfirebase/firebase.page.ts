@@ -11,23 +11,7 @@ export class FirebasePage implements OnInit {
   tmpobj: any;
   tmpobjs: any;
 
-  // countrylist = [
-  //   {
-  //     countryname: "Thailand",
-  //     countrypic: "https://img.icons8.com/color/48/000000/t.png",
-  //     capital: "Bangkok",
-  //   },
-  //   {
-  //     countryname: "Singapore",
-  //     countrypic: "https://img.icons8.com/color/48/000000/s.png",
-  //     capital: "Singapore",
-  //   },
-  //   {
-  //     countryname: "Myanmar",
-  //     countrypic: "https://img.icons8.com/color/48/000000/m.png",
-  //     capital: "Nepidor",
-  //   },
-  // ];
+ 
 
   constructor(private alertCtrl: AlertController, private getcrud: crudapi) {}
 

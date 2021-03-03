@@ -9,7 +9,7 @@ const routes: Routes = [
   {
     path: '',
     // redirectTo: 'home',
-    redirectTo: 'firebase',
+    redirectTo: 'p1-input',
     pathMatch: 'full'
   },
   {
@@ -18,19 +18,19 @@ const routes: Routes = [
   },
   {
     path: 'bmip1',
-    loadChildren: () => import('./bmip1/bmip1.module').then( m => m.Bmip1PageModule)
+    loadChildren: () => import('./bmip/bmip1/bmip1.module').then( m => m.Bmip1PageModule)
   },
   {
     path: 'bmip2/:sendStdobj',
-    loadChildren: () => import('./bmip2/bmip2.module').then( m => m.Bmip2PageModule)
+    loadChildren: () => import('./bmip/bmip2/bmip2.module').then( m => m.Bmip2PageModule)
   },
   {
     path: 'mylist',
-    loadChildren: () => import('./mylist/mylist.module').then( m => m.MylistPageModule)
+    loadChildren: () => import('./aseans/mylist/mylist.module').then( m => m.MylistPageModule)
   },
   {
     path: 'asean/:sendAsean',
-    loadChildren: () => import('./asean/asean.module').then( m => m.AseanPageModule)
+    loadChildren: () => import('./aseans/asean/asean.module').then( m => m.AseanPageModule)
   },
   {
     path: 'buy/:sendBuy',
@@ -48,6 +48,20 @@ const routes: Routes = [
     path: 'firebase',
     loadChildren: () => import('./learnfirebase/firebase.module').then( m => m.FirebasePageModule)
   },
+  {
+    path: 'map',
+    loadChildren: () => import('./map/map.module').then( m => m.MapPageModule)
+  },
+  {
+    path: 'p1-input',
+    loadChildren: () => import('./QuizTest/p1-input/p1-input.module').then( m => m.P1InputPageModule)
+  },
+  {
+    path: 'p2-edit/:sendlist',
+    loadChildren: () => import('./QuizTest/p2-edit/p2-edit.module').then( m => m.P2EditPageModule)
+  },
+
+ 
 ];
 
 @NgModule({

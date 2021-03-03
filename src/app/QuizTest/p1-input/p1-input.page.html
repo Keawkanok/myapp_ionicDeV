@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>P1_Input</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <ion-item *ngFor="let tmpobj of list">
+
+      <ion-item-sliding>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img src="{{tmpobj.genre}}">
+          </ion-thumbnail>
+          <ion-label>Title: {{tmpobj.title}}</ion-label>
+          <ion-label>Review: {{tmpobj.review}}</ion-label>
+
+        </ion-item>
+
+        <ion-item-options side="start">
+          <ion-item-option color="warning" (click)="presentPrompt(tmpobj)">
+            <ion-icon name="create-outline"></ion-icon>EDIT
+          </ion-item-option>
+          <ion-item-option color="danger" (click)="presentConfirm(tmpobj)">
+            <ion-icon name="trash-outline"></ion-icon>DEL
+          </ion-item-option>
+        </ion-item-options>
+
+      </ion-item-sliding>
+
+    </ion-item>
+
+  </ion-list>
+</ion-content>

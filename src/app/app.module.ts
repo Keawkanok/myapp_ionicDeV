@@ -16,6 +16,10 @@ import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireAnalyticsModule } from "@angular/fire/analytics";
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 
+//map
+import { GoogleMaps } from '@ionic-native/google-maps';
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -28,12 +32,13 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
     AngularFirestoreModule,
     AngularFireAnalyticsModule,
     AngularFireDatabaseModule,
+    // GoogleMaps
 
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy},GoogleMaps
   ],
   bootstrap: [AppComponent],
 })
