@@ -9,7 +9,7 @@ const routes: Routes = [
   {
     path: '',
     // redirectTo: 'home',
-    redirectTo: 'p1-input',
+    redirectTo: 'mylist',
     pathMatch: 'full'
   },
   {
